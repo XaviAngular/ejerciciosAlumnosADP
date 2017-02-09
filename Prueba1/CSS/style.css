@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+ #wrapper{
+		margin:auto;
+		width:800px;
+ }
+ #cabecera{
+		width:100%;
+		height:60px;
+		background-color:#b3e5fc;
+ }
+ #caja1{
+		height:300px;
+		width:30%;
+		float:left;
+ }
+ #caja2{
+		height:300px;
+		width:70%;
+		float:left;
+		background-color:#03a9f4;
+ }
+ #pie{
+		float:left;
+		width:100%;
+		height:90px;
+		background-color:#82b1ff;
+ }
+ *{
+	 font-family:'Lobster', cursive;
+ }
+ h1 {
+	 color:white;
+	 background-color:blue;
+	 padding:10px;
+	 text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
+ }
+ #caja1 h2{
+	 color:white;
+	 background-color:black;
+ }
+ #caja2 h2{
+	 color:red;
+	 background-color:white;
+	 padding:1.5em;
+	 -webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+ }
