@@ -1,0 +1,60 @@
+﻿/* Css para el ejercicio prueba 1303 */
+/* importanto fuentes de google */
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
+
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Caveat Brush', cursive;
+	box-sizing: border-box;
+	
+}
+h1{
+	color:#fff;
+	padding:10px;
+	background-color:blue;
+	text-shadow: 2px 2px #000;
+}
+
+#container{
+	width:800px;
+	margin: 50px auto;
+	display:block;
+}
+.cabecera, .pie{
+	width:100%;
+	float:left;
+	}
+.cabecera{
+	height: 60px;
+	background-color:#000;
+}
+.pie{
+	height: 90px;
+	background-color:#000;
+}
+.caja1, .caja2 {	height:300px;}
+.caja1{
+	width:30%;
+	float:left;
+}
+.caja2{
+	width:70%;
+	float:right;
+	background-color:red;
+}
+
+.caja1 h2{
+	
+	color:#fff;
+	background-color:#000;
+}
+.caja2{
+	float:right;
+	display:block;
+	color:red;
+	background-color:#fff;
+	padding:1.5em;
+	border: 5px solid #000;
+	border-radius: 8px;
+}
