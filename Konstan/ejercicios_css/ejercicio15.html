@@ -8,7 +8,7 @@
         <style>
 
             /*Regla para los elementos de clase btn*/
-            {
+            .btn{
                 box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
                 display: inline-block;
                 margin-bottom: 0;
@@ -24,16 +24,26 @@
                 line-height: 1.42857143;
                 border-radius: 4px;   
             }
+            
             /*Regla para los de clase btn-danger*/
-            {
+            .btn-danger{
                 color: #fff;
                 background-color: #d9534f;
                 border-color: #d43f3a;
             }
-            
+
             ul{
-                list-style-type: 
+                list-style-type: none;
             }
+            
+            li:before {
+                content: "\f00c"; /* FontAwesome Unicode */
+                display: inline-block;
+                font-family: FontAwesome;
+                margin-left: -1.3em; /* darle un pequeño margen */
+                width: 1.3em; /* darle un pequeño margen */
+            }
+            
         </style>
     </head>
     <body>
