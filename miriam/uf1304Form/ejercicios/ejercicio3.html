@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+ <meta charset="utf-8">
+<head>
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/scriptForm.js"></script>
+	   <script>$(document).ready(function() {
+				$('select').material_select();
+		});</script>
+	<form action="php/login.php" method="post">
+		  <div class="imgcontainer">
+			<img src="img/twitter-logo.png" alt="Avatar" class="avatar">
+		  </div>
+
+		  <div class="container">
+			<label><b>Usuario</b></label>
+			<input type="text" placeholder="Enter Username" name="uname" required>
+
+			<label><b>Contraseña</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" required>
+			
+			
+			<button type="submit">Login</button>
+			<input type="checkbox" checked="checked"> Recuérdame
+			</div>
+		  
+				
+			<div class="container" style="background-color:#f1f1f1">
+			<button type="button" class="cancelbtn">Cancelar</button>
+			<span class="psw">Has olvidado tu <a href="#">contraseña?</a></span>
+			
+			
+			<input type="hidden" placeholder="control" name="www.laweb.com">
+			</div>
+	</form>
+</body>
+</html>
+<!-- 
+Añade el código necesário para trabajar con el Framework Materialize
+
+Crea un formulario para hacer un login (usuario/contraseña) con id "login" (busca plantillas en internet)
+
+En este mismo comentario pega alguna (2 o 3) de las webs que has encontrado con ejemplos de plantilla de login
+
+https://www.w3schools.com/howto/howto_css_login_form.asp
+http://bootsnipp.com/snippets/featured/custom-login-registration-amp-forgot-password
+https://colorlib.com/wp/html5-and-css3-login-forms/
+
+Añade un campo oculto con nombre "control" y valor "www.laweb.com"
+
+El action del formulario debe ser a la url "php/login.php"
+
+El método debe ser por POST
+ -->
