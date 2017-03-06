@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Ejercicio 3 de Formularios</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<section id="content">
+			<form  id="login" action="php/login.php" method="POST">
+				<h1>Login Form</h1>
+				<div>
+					<input type="text" placeholder="Username" required="" id="username" />
+				</div>
+				<div>
+					<input type="password" placeholder="Password" required="" id="password" />
+				</div>
+				<div>
+					<input type="submit" value="Log in" />
+					<a href="#">Olvidaste tu contraseña?</a>
+					<a href="#">Registrate</a>
+				</div>
+				<input type="hidden" name"control" value="www.laweb.com">
+			</form>
+			<div class="button">
+				<a href="#">Download source file</a>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
+<!-- 
+Añade el código necesário para trabajar con el Framework Materialize
+
+Crea un formulario para hacer un login (usuario/contraseña) con id "login" (busca plantillas en internet)
+
+En este mismo comentario pega alguna (2 o 3) de las webs que has encontrado con ejemplos de plantilla de login
+	_________________________________
+	: web:							:
+	:								:
+	: https://colorlib.com          :
+	: https://dcrazed.com 			:
+	: http://www.esandra.com        :
+	:_______________________________:
+
+
+Añade un campo oculto con nombre "control" y valor "www.laweb.com"
+
+El action del formulario debe ser a la url "php/login.php"
+
+El método debe ser por POST
+ -->
