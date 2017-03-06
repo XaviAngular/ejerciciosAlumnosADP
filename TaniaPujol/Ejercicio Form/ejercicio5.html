@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Ejercicio 5 de Formularios</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+</head>
+<body>
+	<div class="container">
+    <form class="col s12">
+      	<div class="row">
+      	<!-- campo destino -->
+        	<div class="col s12 l6 m6">
+      			<i class="material-icons prefix">textsms</i>
+          		<input type="text" id="autocomplete-input" class="autocomplete">
+          		<label for="autocomplete-input">Destino</label>
+        	</div>
+    	<!-- campo origen -->
+        	<div class="col s12 l6 m6">
+      			<i class="material-icons prefix">textsms</i>
+          		<input type="text" id="autocomplete-input" class="autocomplete">
+          		<label for="autocomplete-input">Origen</label>
+        	</div>
+    	</div>
+      	<div class="row">
+      	<!-- campo tipo de viajes -->
+        	<div class="input-field col s12">
+		    	<select>
+		      		<option value="" disabled selected>Escaja una opcion</option>
+		      		<option value="amigos">Con amigos</option>
+		      		<option value="amigas">Con amigas</option>
+		      		<option value="solo">Solo</option>
+		      		<option value="familia">En familia</option>
+		      		<option value="pareja">En pareja</option>
+		    	</select>
+		    	<label>Tipo de viaje a realizar</label>
+  			</div>
+      	</div>
+      	<div class="row">
+      	<!-- campo mascotas -->
+        	<div class="input-field col s12">
+          		<input type="checkbox" class="filled-in" id="mascotas" checked="checked" />
+      			<label for="mascotas">Mascotas ?</label>
+  	        </div>
+    	</div>
+      	<div class="row">
+      	<!-- campo tipo de transporte-->
+	        <div class="input-field col s12">
+			    <select multiple>
+			    	<option value="barco" data-icon="img/barco.png" class="left circle">Barco</option>
+			    	<option value="avion" data-icon="img/avion.png" class="left circle">Avión</option>
+			    	<option value="coche" data-icon="img/coche.png" class="left circle">Coche</option>
+			    	<option value="tren" data-icon="img/tren.png" class="left circle">Tren</option>
+			    	<option value="bicicleta" data-icon="img/bicicleta.png" class="left circle">Bicicleta</option>
+			    	<option value="caminando" data-icon="img/caminando.png" class="left circle">Caminando</option>
+			    </select>
+			    <label>Tipo de transporte</label>
+	  		</div>
+	  	</div>
+	  	<!-- campo presupuesto por persona-->
+	  	<div class="row">
+	  		<div class="range-field col s12">
+	  			<input type="range" id="precio" min="100" max="3000" />
+	  			<label for="precio">Presupuesto por persona</label>
+	  		</div>
+	  	</div>
+	  	<!-- campo Data de salida-->
+	  	<div class="row">
+	  		<div class="input-field col s6">
+	  			<input type="date" class="datepicker"> 
+	  			<label for="precio">Data de salida</label>
+	  		</div>
+	  	</div>
+		<div class="row">
+		<!-- campo viajeros -->
+			<div class="input-field col s12">
+			    <select multiple>
+			      	<optgroup label="Adultos">
+				        <option value="solo">Solo</option>
+				        <option value="2personas">2 Personas</option>
+				        <option value="3personas">3 Personas</option>
+				        <option value="4personas">4 Personas</option>
+				        <option value="5personas">5 Personas</option>
+				        <option value="6personas">6 Personas</option>
+				        <option value="7personas">7 Personas</option>
+				        <option value="8personas">8 Personas</option>
+			      	</optgroup>
+			      	<optgroup label="niños entre 0-3">
+			        	<option value="1niño">1 Niño</option>
+			        	<option value="2niño">2 Niño</option>
+			        	<option value="3niño">3 Niño</option>
+			        	<option value="4niño">4 Niño</option>
+			        	<option value="5niño">5 Niño</option>			        	
+			      	</optgroup>
+			      	<optgroup label="niños entre 4-12">
+			        	<option value="1niño">1 Niño</option>
+			        	<option value="2niño">2 Niño</option>
+			        	<option value="3niño">3 Niño</option>
+			        	<option value="4niño">4 Niño</option>
+			        	<option value="5niño">5 Niño</option>			        	
+			      	</optgroup>
+			    </select>
+			    <label>Viajeros</label>
+			</div>
+		</div>
+	<!-- campo ambiente -->
+	<div class="row">
+		<div class="input-field col s12">
+		    <select multiple>
+		    	<option value="desierto">Desierto</option>
+		    	<option value="urbanita">Urbanita</option>
+		    	<option value="rural">Rural</option>
+		    </select>
+		    <label>Tipo de Ambiente</label>
+  		</div>
+	</div>
+	<!-- campo comentario -->
+	 <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" maxlength="300"></textarea>
+          <label for="textarea1">Comentario</label>
+        </div>
+      </div>  
+  </form>
+   
+  
+  </div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+    	$(document).ready(function() {
+   			$('select').material_select();
+   			$('.datepicker').pickadate({
+    			selectMonths: true, // Creates a dropdown to control month
+    			selectYears: 2 // Creates a dropdown of 15 years to control year
+  			});
+  			$('input.autocomplete').autocomplete({
+    			data: {
+      				"Barcelona": null,
+      				"Reus": null,
+      				"Girona": null,
+      				"Madrid": null,
+      				"Santiago de Compostela": null,
+      				"Hawai": null,
+      				"Shangai": null,
+      				"New York": null,
+      				"Paris": null,
+      				"Roma": null,
+      				"Tokyo": null,
+       			},
+    			limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+  			});
+  		$.ajax({
+		      url: "http://www.travek.com/search",
+		      type: 'GET',
+		      dataType: 'json',
+		      success: function(result){
+		        var etiquetas = "";
+		        var values = "";
+		        var options = "";
+		        if (debug) console.log(result.query);
+		        $.each(result.query, function() {
+		          $.each(this, function(campo, valor) {
+		             if (campo == 'id') values=valor;
+		             else etiquetas=valor;
+		          });
+		          options += "<option value='" + values + "'>" + etiquetas + "</option>";
+		        }); 
+		        if (debug) console.log(options)        
+		        $("#listado").append(options);
+		        $('select').material_select();
+		      },
+		      error: function(result){
+		        alert('errorororor');
+		      }
+		  });
+  		});
+    </script>
+</body>
+</html>
+<!-- 
+Haz una copia del ejercicio4 y aplica las siguientes modificaciones:
+Campo origen: Autocompletar con las siguientes ciudades (Barcelona, Reus, Girona, Madrid, Santiago de Compostela)
+Campo destino: Autocompletar con las siguientes ciudades (Hawai, Shangai, New York, Paris, Roma, Tokyo)
+
+El action del formulario debe ser por ajax, crea el script básico de envío y de llamada ajax, la url de llamada es "http://www.travek.com/search".
+El método debe ser por GET
+ -->
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 2 de Formulario</title>
+	<style>
+		body{
+			background-image: url('https://thumbs.dreamstime.com/z/vector-set-infographics-elements-dogs-cats-design-flat-style-32965315.jpg');
+			font-family: comic sans;
+			font-size: 1.5em;
+		}
+		#formulario{
+			background-color: #FFF;
+			margin: 50px auto;
+			width: 50%;
+			height: 400px;
+			padding: 20px;
+			border-radius: 20px;
+		}
+		input[type=text], select {
+    		width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+
+		input[type=submit] {
+		    width: 100%;
+		    background-color: red;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    border-radius: 10px;
+		    cursor: pointer;
+		    font-size: 2em;
+		}
+
+		input[type=submit]:hover {
+		    background-color: #009688;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<form id="formulario" action="php/recibeMascota.php" method="post">
+			<label for="Nombre">Nombre de la Mascota</label>
+			<br>
+			<input id="Nombre" type="text" name="Nombre" required="">
+			<br>
+			<label for="Edad">Edad</label>
+			<br>
+			<input type="number" name="Edad" required="" maxlength="2" min="1" max="20">
+			<br>
+			<label for="Tipo">Tipo de Mascota</label>
+			<br>
+			<input type="text" list="Tipo" name="Tipo" placeholder="Tipo de Mascota">
+				<datalist id="Tipo">
+					<option value="Perro">
+					<option value="Gato">
+					<option value="Ave">
+					<option value="Pez">
+					<option value="Reptil">
+					<option value="Otro">
+				</datalist>
+			<br>
+			<label for="chip">Nª de Chip</label>
+			<input type="text" name="chip" maxlength="7" pattern="([0-9]{4}[A-Za-z]{3})" placeholder="nnnnLLL">
+			<br>
+			<label for="Castrado">Castrado</label>
+			<input type="checkbox" name="Castrado" value="castrado">
+			<br>
+			<br>
+			<input type="submit">
+		</form>
+	</section>
+	
+	
+
+
+</body>
+</html>
+<!-- 
+Crea un formulario para el registro de animales de compañía con los siguientes campos:
+Nombre de la mascota (obligatorio)
+Edad de la mascota (valores entre 1 y 20) (obligatorio)++++ (min i max para entre dos valores)
+Tipo de mascota (Desplegable con perro, gato, ave, pez, reptil, otro)
+Castrado con (checkbox) (obligatorio)
+Nº de chip (4 número y 3 letras)
+El action del formulario debe ser a la url "php/recibeMascota.php"
+El método debe ser por POST
+ -->
