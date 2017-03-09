@@ -6,179 +6,131 @@
 	<title>Ejercicio 5 de Formularios</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 	<div class="container">
-    <form class="col s12">
-      	<div class="row">
-      	<!-- campo destino -->
-        	<div class="col s12 l6 m6">
-      			<i class="material-icons prefix">textsms</i>
-          		<input type="text" id="autocomplete-input" class="autocomplete" name="destino">
-          		<label for="autocomplete-input">Destino</label>
-        	</div>
-    	<!-- campo origen -->
-        	<div class="col s12 l6 m6">
-      			<i class="material-icons prefix">textsms</i>
-          		<input type="text" id="autocomplete-input" class="autocomplete" name="origen">
-          		<label for="autocomplete-input">Origen</label>
-        	</div>
-    	</div>
-      	<div class="row">
-      	<!-- campo tipo de viajes -->
-        	<div class="input-field col s12">
-		    	<select name="viaje">
-		      		<option value="" disabled selected>Escaja una opcion</option>
-		      		<option value="amigos">Con amigos</option>
-		      		<option value="amigas">Con amigas</option>
-		      		<option value="solo">Solo</option>
-		      		<option value="familia">En familia</option>
-		      		<option value="pareja">En pareja</option>
-		    	</select>
-		    	<label>Tipo de viaje a realizar</label>
-  			</div>
-      	</div>
-      	<div class="row">
-      	<!-- campo mascotas -->
-        	<div class="input-field col s12">
-          		<input type="checkbox" class="filled-in" id="mascotas" checked="checked" name="mascotas">
-      			<label for="mascotas">Mascotas ?</label>
-  	        </div>
-    	</div>
-      	<div class="row">
-      	<!-- campo tipo de transporte-->
-	        <div class="input-field col s12">
-			    <select multiple name="transporte">
-			    	<option value="barco" data-icon="img/barco.png" class="left circle">Barco</option>
-			    	<option value="avion" data-icon="img/avion.png" class="left circle">Avión</option>
-			    	<option value="coche" data-icon="img/coche.png" class="left circle">Coche</option>
-			    	<option value="tren" data-icon="img/tren.png" class="left circle">Tren</option>
-			    	<option value="bicicleta" data-icon="img/bicicleta.png" class="left circle">Bicicleta</option>
-			    	<option value="caminando" data-icon="img/caminando.png" class="left circle">Caminando</option>
-			    </select>
-			    <label>Tipo de transporte</label>
-	  		</div>
-	  	</div>
-	  	<!-- campo presupuesto por persona-->
-	  	<div class="row">
-	  		<div class="range-field col s12">
-	  			<input type="range" id="precio" min="100" max="3000" name="presupuesto">
-	  			<label for="precio">Presupuesto por persona</label>
-	  		</div>
-	  	</div>
-	  	<!-- campo Data de salida-->
-	  	<div class="row">
-	  		<div class="input-field col s6">
-	  			<input type="date" class="datepicker" name="data"> 
-	  			<label for="precio">Data de salida</label>
-	  		</div>
-	  	</div>
-		<div class="row">
-		<!-- campo viajeros -->
-			<div class="input-field col s12">
-			    <select multiple name="viajeros">
-			      	<optgroup label="Adultos">
-				        <option value="solo">Solo</option>
-				        <option value="2personas">2 Personas</option>
-				        <option value="3personas">3 Personas</option>
-				        <option value="4personas">4 Personas</option>
-				        <option value="5personas">5 Personas</option>
-				        <option value="6personas">6 Personas</option>
-				        <option value="7personas">7 Personas</option>
-				        <option value="8personas">8 Personas</option>
-			      	</optgroup>
-			      	<optgroup label="niños entre 0-3">
-			        	<option value="1niño03">1 Niño</option>
-			        	<option value="2niño03">2 Niño</option>
-			        	<option value="3niño03">3 Niño</option>
-			        	<option value="4niño03">4 Niño</option>
-			        	<option value="5niño03">5 Niño</option>			        	
-			      	</optgroup>
-			      	<optgroup label="niños entre 4-12">
-			        	<option value="1niño412">1 Niño</option>
-			        	<option value="2niño412">2 Niño</option>
-			        	<option value="3niño412">3 Niño</option>
-			        	<option value="4niño412">4 Niño</option>
-			        	<option value="5niño412">5 Niño</option>			        	
-			      	</optgroup>
-			    </select>
-			    <label>Viajeros</label>
+		<h3>BuscoViajes.cat</h3>
+	    <div class="box">
+	    	<form class="col s12">
+	      	<div class="row">
+	      	<!-- campo destino -->
+	        	<div class="col s12 l6 m6">
+	      			<i class="material-icons prefix">textsms</i>
+	          		<input type="text" id="autocomplete-input" class="autocomplete" name="destino">
+	          		<label for="autocomplete-input">Destino</label>
+	        	</div>
+	    	<!-- campo origen -->
+	        	<div class="col s12 l6 m6">
+	      			<i class="material-icons prefix">textsms</i>
+	          		<input type="text" id="autocomplete-input" class="autocomplete" name="origen">
+	          		<label for="autocomplete-input">Origen</label>
+	        	</div>
+	    	</div>
+	      	<div class="row">
+	      		<!-- campo tipo de viajes -->
+	      		<div class="input-field col s12 m6 l6">
+			    	<select name="viaje">
+			      		<option value="" disabled selected>Escaja una opcion</option>
+			      		<option value="amigos">Con amigos</option>
+			      		<option value="amigas">Con amigas</option>
+			      		<option value="solo">Solo</option>
+			      		<option value="familia">En familia</option>
+			      		<option value="pareja">En pareja</option>
+			    	</select>
+			    	<label>Tipo de viaje a realizar</label>
+	  			</div>
+	  			<!-- campo viajeros -->
+				<div class="input-field col s12 m6 l6">
+				    <select multiple name="viajeros">
+				      	<optgroup label="Adultos">
+					        <option value="solo">Solo</option>
+					        <option value="2personas">2 Personas</option>
+					        <option value="3personas">3 Personas</option>
+					        <option value="4personas">4 Personas</option>
+					        <option value="5personas">5 Personas</option>
+					        <option value="6personas">6 Personas</option>
+					        <option value="7personas">7 Personas</option>
+					        <option value="8personas">8 Personas</option>
+				      	</optgroup>
+				      	<optgroup label="niños entre 0-3">
+				        	<option value="1niño03">1 Niño</option>
+				        	<option value="2niño03">2 Niño</option>
+				        	<option value="3niño03">3 Niño</option>
+				        	<option value="4niño03">4 Niño</option>
+				        	<option value="5niño03">5 Niño</option>			        	
+				      	</optgroup>
+				      	<optgroup label="niños entre 4-12">
+				        	<option value="1niño412">1 Niño</option>
+				        	<option value="2niño412">2 Niño</option>
+				        	<option value="3niño412">3 Niño</option>
+				        	<option value="4niño412">4 Niño</option>
+				        	<option value="5niño412">5 Niño</option>			        	
+				      	</optgroup>
+				    </select>
+				    <label>Viajeros</label>
+				</div>
+	      	</div>
+	      	<div class="row">
+	      		<!-- campo ambiente -->
+	      		<div class="input-field col s12 m6 l6">
+				    <select multiple name="ambiente">
+				    	<option value="desierto">Desierto</option>
+				    	<option value="urbanita">Urbanita</option>
+				    	<option value="rural">Rural</option>
+				    </select>
+				    <label>Tipo de Ambiente</label>
+		  		</div>
+		  		<!-- campo tipo de transporte-->
+		        <div class="input-field col s12 m6 l6">
+				    <select multiple name="transporte">
+				    	<option value="barco" data-icon="img/barco.png" class="left circle">Barco</option>
+				    	<option value="avion" data-icon="img/avion.png" class="left circle">Avión</option>
+				    	<option value="coche" data-icon="img/coche.png" class="left circle">Coche</option>
+				    	<option value="tren" data-icon="img/tren.png" class="left circle">Tren</option>
+				    	<option value="bicicleta" data-icon="img/bicicleta.png" class="left circle">Bicicleta</option>
+				    	<option value="caminando" data-icon="img/caminando.png" class="left circle">Caminando</option>
+				    </select>
+				    <label>Tipo de transporte</label>
+		  		</div>
+		  	</div>      	
+		  	<!-- campo presupuesto por persona-->
+		  	<div class="row">
+		  		<div class="range-field col s12 m6 l6">
+		  			<input type="range" id="precio" min="100" max="3000" name="presupuesto">
+		  			<label for="precio">Presupuesto por persona</label>
+		  		</div>
+		  	  	<!-- campo Data de salida-->
+		  		<div class="input-field col s12 m4 l4 right">
+		  			<input type="date" class="datepicker" name="data"> 
+		  			<label for="precio">Data de salida</label>
+		  		</div>
+		  	</div>
+			<div class="row">
+				<!-- campo mascotas -->
+		  		<div class="input-field col s12 m2 l2">
+	          		<input type="checkbox" class="filled-in" id="mascotas" checked="checked" name="mascotas">
+	      			<label for="mascotas">Mascotas ?</label>
+	  	        </div>
+	  	        <!-- campo comentario -->
+				<div class="input-field col s12 m10 l10">
+		          <textarea id="textarea1" class="materialize-textarea" maxlength="300" name="comentario"></textarea>
+		          <label for="textarea1">Comentario</label>
+		        </div>
 			</div>
-		</div>
-	<!-- campo ambiente -->
-	<div class="row">
-		<div class="input-field col s12">
-		    <select multiple name="ambiente">
-		    	<option value="desierto">Desierto</option>
-		    	<option value="urbanita">Urbanita</option>
-		    	<option value="rural">Rural</option>
-		    </select>
-		    <label>Tipo de Ambiente</label>
-  		</div>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+    			<i class="material-icons right">send</i>
+ 			</button>
+ 			<button class="btn waves-effect waves-light" type="submit" name="action">Borrar
+    			<i class="material-icons right">send</i>
+  			</button>
+	  	</form>
+	    </div>  
 	</div>
-	<!-- campo comentario -->
-	 <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" maxlength="300" name="comentario"></textarea>
-          <label for="textarea1">Comentario</label>
-        </div>
-      </div>  
-  </form>
-   
-  
-  </div>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script>
-    	$(document).ready(function() {
-   			$('select').material_select();
-   			$('.datepicker').pickadate({
-    			selectMonths: true, // Creates a dropdown to control month
-    			selectYears: 2 // Creates a dropdown of 15 years to control year
-  			});
-  			$('input.autocomplete').autocomplete({
-    			data: {
-      				"Barcelona": null,
-      				"Reus": null,
-      				"Girona": null,
-      				"Madrid": null,
-      				"Santiago de Compostela": null,
-      				"Hawai": null,
-      				"Shangai": null,
-      				"New York": null,
-      				"Paris": null,
-      				"Roma": null,
-      				"Tokyo": null,
-       			},
-    			limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-  			});
-  		$.ajax({
-		      url: "http://www.travek.com/search",
-		      type: 'GET',
-		      dataType: 'json',
-		      success: function(result){
-		        var etiquetas = "";
-		        var values = "";
-		        var options = "";
-		        if (debug) console.log(result.query);
-		        $.each(result.query, function() {
-		          $.each(this, function(campo, valor) {
-		             if (campo == 'id') values=valor;
-		             else etiquetas=valor;
-		          });
-		          options += "<option value='" + values + "'>" + etiquetas + "</option>";
-		        }); 
-		        if (debug) console.log(options)        
-		        $("#listado").append(options);
-		        $('select').material_select();
-		      },
-		      error: function(result){
-		        alert('errorororor');
-		      }
-		  });
-  		});
-    </script>
+    <script type="text/javascript" src="js/envio.js"></script>
 </body>
 </html>
 <!-- 
