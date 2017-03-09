@@ -1,0 +1,161 @@
+.p-margen{
+	margin-top: 1.5em;
+}
+body{
+    background: url(../img/fondo_form_viaje.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.container{
+    background-color: rgba(255,255,255,.5);
+    padding: 0.5em;
+}
+.btn{
+    margin: 2em;
+}
+#banner>img{
+    width: 100%;
+    padding: 1em;
+    padding-left: -0.5em;
+}
+h5{
+    color:rgb(25,48,116);
+}
+/*----- Colores del Formulario por MATERIALIZECSS -----*/
+
+/* label color */
+.input-field label, .range-field label {
+    color: rgb(3, 89, 186);
+    font-weight: bold;
+}
+/* placeholder color */
+.input-field input[type=text]::-webkit-input-placeholder {
+    color: rgba(0,0,255,.5);
+    font-weight: bold;
+} /* WebKit */
+.input-field input[type=text]::-moz-placeholder {
+    color: blue;
+    font-weight :bold;
+} /* Firefox 19+ */
+.input-field input[type=text]:-ms-input-placeholder {
+    color: blue;
+    font-weight :bold;
+} /* IE 10+ */
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid rgb(6, 255, 0);
+    box-shadow: 0 1px 0 0 rgb(6, 255, 0);
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid rgb(255,0,0);
+    box-shadow: 0 1px 0 0 rgb(255,0,0);
+}
+/* icon prefix focus color */
+/*.input-field .prefix.active {
+    color: #000;
+}*/
+/* checkbox color ON */
+.input-field input[type="checkbox"]:checked+label:before {
+    border-right: 3px solid rgb(255,142,6);
+    border-bottom: 3px solid rgb(255,142,6);
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+    background-color: transparent;
+}
+/* checkbox color OFF */
+.input-field input[type="checkbox"]+label:before, input[type="checkbox"]:not(.filled-in)+label:after {    
+    border: 2px solid rgb(25,48,116);
+    background-color: rgba(0,142,223,.5);
+}
+/* color select text */
+.input-field span{
+    color: blue!important;
+}
+/* Color del boton */
+.btn{
+    color:rgb(255,142,6);
+    background-color: rgb(38,71,152);
+}
+/* Color del boton al ponerte encima de el */
+.btn:hover{
+    background-color: rgb(100,149,237);
+}
+/* Color del fondo de la bola flotante */
+input[type=range]+.thumb {
+    background-color: rgb(48,0,202);
+    top: 70px!important;
+  }
+/* Color del valor de scroll range */
+input[type=range]+.thumb .value{
+    color: rgb(255,255,255)!important;
+    font-weight: bold;
+}
+/*input[type=range] + .thumb.active .value {
+    color: red;
+  }*/
+/* Color de la bolita del scroll range */
+input[type=range]::-webkit-slider-thumb {
+    background-color: rgb(25,48,116);
+  }
+input[type=range]::-moz-range-thumb {
+    background-color: rgb(25,48,116);
+  }
+input[type=range]::-ms-thumb {
+    background-color: rgb(25,48,116);
+}
+/*radio botones*/
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+    border: 2px solid rgb(25,48,116);
+    background-color: rgb(255,142,6);
+}
+[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
+    border: 2px solid rgb(25,48,116);
+}
+/* Color de iconos en botones */
+.material-icons{
+    color: rgb(255,142,6);
+}
+/* Colores dentro de SWITCH */
+.switch>label{
+    color: rgb(3, 89, 186)!important;
+}
+.switch :nth-child(2){
+    color: blue!important;
+}
+.switch label .lever {
+    background-color: blue;
+}
+.switch label .lever:after{
+    background-color: #00FFEA;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #0078AB!important;
+}
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #2F21B2;
+}
+/* Color del textarea */
+.input-field textarea[class=materialize-textarea]:focus {
+border-bottom: 1px solid #2196f3;
+box-shadow: 0 1px 0 0 #2196f3;
+color: ;
+}
+.input-field textarea[class=materialize-textarea]{
+    color:rgb(25,48,116);
+}
+.input-field textarea[class=materialize-textarea]+label.active {
+    color: rgb(25,48,116);
+}
+/*---------- FIN colores mediante MATERIALIZECSS ----------*/
