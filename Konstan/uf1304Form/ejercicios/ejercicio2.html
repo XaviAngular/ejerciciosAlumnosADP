@@ -5,33 +5,66 @@
         <meta charset="UTF-8">
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!--Import Google Icon Font-->
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!-- Custom CSS Style -->
         <link type="text/css" rel="stylesheet" href="css/styles.css">
         <title>Ejercicio 2</title>
     </head>
 
     <body>
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
 
-		<form action="php/recibeMascota.php">
-			
-		</form>
+        <div id="container">
 
+            <h1>Formulario para inscripción de su mascota.</h1>
+                <form action="php/recibeMascota.php" method="POST">
+
+                    <div>
+                        <label for="nombre_empresa">Nombre de la Mascota:</label>
+                        <input placeholder="Nombre de la mascota" id="nombre_mascota" type="text" name="nombre_mascota" class="validate"required>
+                    </div>
+            
+                    <div>
+                        <label for="edad_mascota">Edad de la Mascota:</label>
+                        <input placeholder="Edad" id="edad_mascota" type="number" name="edad_mascota" class="validate" min="1" max="20" required>
+                        
+                    </div>
+
+                    <div>
+                        <label>Mascotas:</label>
+                        <select id="mascota" name="mascota">
+                            <option value="" disabled selected>Seleccione el tipo de mascota</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Pez">Pez</option>
+                            <option value="Reptil">Reptil</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        
+                    </div>
+
+                    <div class="input-field">
+                        <label for="castrado">Castrado</label>
+                        <input type="checkbox" id="castrado" name="castrado" />
+                    </div>
+
+                    <div>
+                        <label for="numero_chip">Número del Chip</label>
+                        <input placeholder="0000-aaa" id="numero_chip" type="text" name="numero_chip" class="validate" pattern="([0-9]{4})(([-]?)([A-Za-z]{3}))">
+                        
+                    </div>
+                    <button type="submit" class="btn waves-effect waves-light" name="action">Enviar</button>
+                </form>
+
+        </div>
 	</body>
 </html>
 <!-- 
 Crea un formulario para el registro de animales de compañía con los siguientes campos:
-Nombre de la mascota (obligatorio)
-Edad de la mascota (valores entre 1 y 20) (obligatorio)
-Tipo de mascota (Desplegable con perro, gato, ave, pez, reptil, otro)
-Castrado con (checkbox) (obligatorio)
-Nº de chip (4 número y 3 letras)
-El action del formulario debe ser a la url "php/recibeMascota.php"
-El método debe ser por POST
+- Nombre de la mascota (obligatorio)
+- Edad de la mascota (valores entre 1 y 20) (obligatorio)
+- Tipo de mascota (Desplegable con perro, gato, ave, pez, reptil, otro)
+- Castrado con (checkbox) (obligatorio)
+- Nº de chip (4 número y 3 letras)
+- El action del formulario debe ser a la url "php/recibeMascota.php"
+- El método debe ser por POST
  -->
