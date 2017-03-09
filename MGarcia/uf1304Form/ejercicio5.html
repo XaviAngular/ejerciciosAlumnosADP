@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	  <link type="text/css" rel="stylesheet" href="css/styles3.css" >
+	  <meta charset="utf-8">
+</head>
+<body>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      	<script type="text/javascript" src="js/materialize.min.js"></script>
+      	<script type="text/javascript" src="js/buscador.js"></script>
+	<div class="container">
+		<div class="row">		
+			<form action="" method="POST" class="col s12" id="buscador">
+				<h2 class="center-align z-depth-4">Buscador de viajes</h2>
+				<div class="row">
+			    	<div class="input-field col s12 m6 l6">
+			          <input type="text" id="auto_origen" name="auto_origen" class="auto_origen">
+			          <label for="auto_origen">Origen</label>
+			        </div>
+			        <div class="input-field col s12 m6 l6">
+			          <input type="text" id="auto_destino" name="auto_destino" class="auto_destino">
+			          <label for="auto_destino">Destino</label>
+			        </div>
+			    </div>
+			    <div class="row">
+			    	<div class="col s12 m6 l6">
+			    		<h5>Tipo de viaje:</h5>
+				    	<div class="col s12 m4 l6">
+					    	<p>
+						      <input class="with-gap radio-blue" name="group1" type="radio" id="conAmigos"  />
+						      <label for="conAmigos">Con amigos</label>
+						    </p>
+						    <p>
+						      <input class="with-gap radio-blue" name="group1" type="radio" id="conAmigas"  />
+						      <label for="conAmigas">Con amigas</label>
+						    </p>
+						    <p>
+						      <input class="with-gap radio-blue" name="group1" type="radio" id="solo"  />
+						      <label for="solo">Solo</label>
+						    </p>
+						</div>
+						<div class="col s12 m4 l6">    
+						    <p>
+						      <input class="with-gap radio-blue" name="group1" type="radio" id="enFamilia"  />
+						      <label for="enFamilia">En familia</label>
+						    </p>
+						    <p>
+						      <input class="with-gap radio-blue" name="group1" type="radio" id="enPareja"  />
+						      <label for="enPareja">En pareja</label>
+						    </p>
+						</div>
+					</div>
+					<div class="col s12 m6 l6">
+						<h5>Transporte:</h5>
+						<div class="col s12 m4 l6">
+					    	<p>
+						      <input type="checkbox" name ="group2" class="filled-in checkbox-blue" id="barco"/>
+						      <label for="barco">Barco</label>
+						    </p>
+						    <p>
+						      <input type="checkbox" name ="group2" class="filled-in checkbox-blue" id="avion"/>
+						      <label for="avion">Avion</label>
+						    </p>
+						    <p>
+						      <input type="checkbox" name ="group2" class="filled-in checkbox-blue" id="coche"/>
+						      <label for="coche">Coche</label>
+						    </p>
+						</div>
+						<div class="col s12 m4 l6">    
+						    <p>
+						      <input type="checkbox" name ="group2" class="filled-in checkbox-blue" id="tren"/>
+						      <label for="tren">Tren</label>
+						    </p>
+						    <p>
+						      <input type="checkbox" name ="group2" class="filled-in checkbox-blue" id="bicicleta"/>
+						      <label for="bicicleta">Bicileta</label>
+						    </p>
+						    <p>
+						      <input type="checkbox" name ="group2" class="filled-in checkbox-blue" id="caminando"/>
+						      <label for="caminando">Caminando</label>
+						    </p>
+						</div>
+			    	</div>
+			    </div>
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<p>
+					      <input type="checkbox" class="filled-in checkbox-blue" id="mascotas" name="mascotas" />
+      					  <label for="mascotas">¿Viajarán mascotas?<i class="material-icons">pets</i></label>
+					    </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m12 l12">
+						
+					      <h5>Prespuesto por persona (entre 100€ y 3000€)</h5>
+					      <div class="col s3 m l3">
+					      	<p>Valor seleccionado: </p>
+					      </div>
+					      <div class="col s12 m1 l1">
+					      	<input type="text" name="valorpresupuesto" id="valorpresupuesto" value="" readonly class="right-align">
+					      </div>
+					      <div class="col s12 m1 l1">
+					      	<p>€</p>
+					      </div>
+					</div>
+					     <div class="range-field"> 
+					      <input type="range" id="presupuesto" name="presupuesto" min="100" max="3000" step="50"/>
+					    </div>
+				</div>
+					<div class="col s12 m12 l12">
+						<h5>Viajeros:</h5>
+						<div class="input-field col s12 m4 l4">
+							
+							<select name="adutos">
+						      <option value="" disabled selected>Seleccionar adultos</option>
+						      <option value="1">Solo</option>
+						      <option value="2">2 personas</option>
+						      <option value="3">3 personas</option>
+						      <option value="4">4 personas</option>
+						      <option value="5">5 personas</option>
+						      <option value="6">6 personas</option>
+						      <option value="7">7 personas</option>
+						      <option value="8">8 personas</option>
+						    </select>
+						    <label>Adultos</label>
+						</div>
+						<div class="input-field col s12 m4 l4">
+							
+							<select name="ninos0_3">
+						      <option value="" disabled selected>Seleccionar niños 0-3 años</option>
+						      <option value="1">1 niño</option>
+						      <option value="2">2 niños</option>
+						      <option value="3">3 niños</option>
+						      <option value="4">4 niños</option>
+						      <option value="5">5 niños</option>
+						    </select>
+						    <label>Niños (0 - 3 años)</label>
+						</div>
+						<div class="input-field col s12 m4 l4">
+							
+							<select name="ninos4_12">
+						      <option value="" disabled selected>Seleccionar niños 4-12 años</option>
+						      <option value="1">1 niño</option>
+						      <option value="2">2 niños</option>
+						      <option value="3">3 niños</option>
+						      <option value="4">4 niños</option>
+						      <option value="5">5 niños</option>
+						    </select>
+						    <label>Niños (4 - 12 años)</label>
+						</div>
+					</div>
+				
+				<div class="row">
+					<div class="col s12 m6 l6">
+						<h5>Mes de salida</h5>
+						<input type="month" class="datepicker" name="mes">
+					</div>
+					<div class="col s12 m6 l6">
+					<h5>Ambiente:</h5>
+						<div class="col s12 m4 l4">
+							<p>
+						      <input type="checkbox" name ="group3" class="filled-in checkbox-blue" id="rural"/>
+						      <label for="rural">Rural</label>
+						      
+						    </p>
+						</div>
+						<div class="col s12 m4 l4">
+						    <p>
+						      <input type="checkbox" name ="group3" class="filled-in checkbox-blue" id="urbanita"/>
+						      <label for="urbanita">Urbanita</label>
+						    </p>
+						</div>
+						<div class="col s12 m4 l4">
+						    <p>
+						      <input type="checkbox" name ="group3" class="filled-in checkbox-blue" id="desierto"/>
+						      <label for="desierto">Desierto</label>
+						    </p>
+						</div>
+					</div>
+					<div class="input-field col s12 m12 l12 ">
+						<textarea id="comentario" name="comentario" class="materialize-textarea"></textarea>
+          				<label for="comentario">Comentario</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m6 l6">
+						<button class="btn waves-effect waves-light indigo darken-2" type="reset" name="action">Borrar datos<i class="material-icons right">not_interested</i>
+						</button>
+					</div>
+					<div class="col s12 m6 l6">
+						<button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Enviar
+						    <i class="material-icons right">flight_takeoff</i>
+						</button>
+					</div>
+				</div>
+			</form>	
+		</div>
+	</div>
+
+
+</body>
+</html>
+<!-- 
+Haz una copia del ejercicio4 y aplica las siguientes modificaciones:
+Campo origen: Autocompletar con las siguientes ciudades (Barcelona, Reus, Girona, Madrid, Santiago de Compostela)
+Campo destino: Autocompletar con las siguientes ciudades (Hawai, Shangai, New York, Paris, Roma, Tokyo)
+
+El action del formulario debe ser por ajax, crea el script básico de envío y de llamada ajax, la url de llamada es "http://www.travek.com/search".
+El método debe ser por GET
+ -->

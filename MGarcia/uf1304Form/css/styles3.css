@@ -1,0 +1,106 @@
+body {
+      background:#e3f2fd url("../img/nosotros.png") no-repeat fixed right top ;
+}
+/* label color */
+   .input-field label {
+     color: #1659AD;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #1659AD;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #1659AD;
+     box-shadow: 0 1px 0 0 #1659AD;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #1659AD;
+     box-shadow: 0 1px 0 0 #1659AD;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #1659AD;
+   }
+     
+/* sellect options */
+   .input-field span {
+     color: #1659AD!important;
+   }
+   /* rango */
+   /*.range-field>.thumb {
+     background-color: #1659AD!important;
+   }*/
+   /* label focus color */
+   
+input[type=range]+.thumb{
+    background-color: #1659AD;
+}
+  /* .with-gap{
+   	 background-color:#1659AD;
+   }*/
+
+input[type=range]::-webkit-slider-thumb{
+	background-color:#1659AD;
+}
+
+   .input-field input[type=materialize-textarea]:focus + label {
+     color: #1659AD;
+   }
+
+
+
+   /* label underline focus color textarea*/
+   .input-field input[type=materialize-textarea]:focus {
+     border-bottom: 1px solid #1659AD;
+     box-shadow: 0 1px 0 0 #1659AD;
+   }
+   /* valid color textarea*/
+   .input-field input[type=materialize-textarea].valid {
+     border-bottom: 1px solid #1659AD;
+     box-shadow: 0 1px 0 0 #1659AD;
+   }
+   /* invalid color textarea*/
+   .input-field input[type=materialize-textarea].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #1659AD;
+   }
+
+.checkbox-blue[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #1659AD;
+     background-color: #1659AD;
+}
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+    background-color: #1659AD;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+    border: 2px solid #1659AD;
+}
+
+
+textarea.materialize-textarea:focus:not([readonly]){
+	border-bottom:1px solid #1659AD;
+	box-shadow:0 1px 0 0 #1659AD;
+	color:#1659AD;
+}
+
+textarea:focus:not([readonly])+label {
+	color:#1659AD!important;
+}
+h2{
+	color: #303f9f;
+}
+label {
+  color:#424242;
+}

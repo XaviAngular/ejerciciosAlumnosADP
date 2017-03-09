@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<style>
+		.container{
+			margin:auto;
+			width:70%;
+		}
+		body { 
+		    background:  url("img/pets.jpg") no-repeat fixed bottom; 
+		}
+		h1{
+			text-align:center;
+			color:#353DDA;
+		}
+	</style>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Registro de mascotas</h1>
+		
+			<form action="php/recibeMascota.php" method="POST">
+				<p>
+		        <b>Nombre de la mascota:</b> <input placeholder="Nombre de la mascota" id="nombreMascota" name="nombreMascota" type="text" class="validate" required>
+		        </p> 
+		        <p>
+		        <b>Edad de la mascota:</b> <input id="edadMascota" name="edadMascota" type="number" class="validate" min="1" max="20" required>
+		        </p>
+		        
+		        <p>
+		        <b>Tipo de mascota:</b>
+			    	<select name="tipoMascota">
+				      <option value="" disabled selected>Seleccionar el tipo de mascota</option>
+				      <option value="Perro">Perro</option>
+				      <option value="Gato">Gato</option>
+				      <option value="Ave">Ave</option>
+				      <option value="Pez">Pez</option>
+				      <option value="Reptil">Reptil</option>
+				      <option value="Otros">Otros</option>
+				    </select>
+				    
+				</p>
+				
+			   	<p>
+				<b>Castrado:</b> <input type="checkbox" id="castrado" name="castrado" />
+				</p>
+				
+				<p>
+				<b>Chip de la mascota:</b> 
+			   		<input placeholder="Chip - 4 numeros y 3 letras" id="chipMascota" name="chipMascota" type="text" class="validate" pattern="([0-9]{4})([A-Za-z]{3})">
+				</p>
+				<input type="submit" value="Enviar datos">
+				
+				
+			</form>
+		
+	</div>
+
+
+</body>
+</html>
+<!-- 
+Crea un formulario para el registro de animales de compañía con los siguientes campos:
+Nombre de la mascota (obligatorio)
+Edad de la mascota (valores entre 1 y 20) (obligatorio)
+Tipo de mascota (Desplegable con perro, gato, ave, pez, reptil, otro)
+Castrado con (checkbox) (obligatorio)
+Nº de chip (4 número y 3 letras)
+El action del formulario debe ser a la url "php/recibeMascota.php"
+El método debe ser por POST
+ -->
