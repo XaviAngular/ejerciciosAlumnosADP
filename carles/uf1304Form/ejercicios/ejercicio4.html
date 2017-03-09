@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 4</title>
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="row container">
+  <h2>Viage con Nosotro</h2>
+  <form action="php/buscaViaje.php" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="Origen" name="origen" id="origen" type="text" class="validate" maxlength="100">
+        <label for="origen">Origen</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="destino" name="destino" type="text" class="validate" maxlength="100">
+        <label for="detino">Destino</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <select>
+          <option value="conAmigos" selected>Con amigos</option>
+          <option value="conAmigas">Con amigas</option>
+          <option value="solo">solo</option>
+          <option value="enFamilia">En familia</option>
+          <option value="enPareja">En pareja</option>
+        </select>
+        <label>Tipo de viaje</label>
+      </div>
+      <div class="input-field col s6">
+        <select>
+          <optgroup label="Adultos">
+            <option value="Solo">Solo</option>
+            <option value="2Personas">2 Personas</option>
+            <option value="3Personas">3 Personas</option>
+            <option value="4Personas">4 Personas</option>
+            <option value="4Personas">4 Personas</option>
+            <option value="6Personas">6 Personas</option>
+            <option value="7Personas">7 Personas</option>
+            <option value="8Personas">8 Personas</option>
+          </optgroup>
+        </select>
+        <select name="" id="">
+          <optgroup label="Niños entre 0-3">
+            <option value="1niño">1 niño</option>
+            <option value="2niños">2 niños</option>
+            <option value="3niños">3 niños</option>
+            <option value="4niños">4 niños</option>
+            <option value="5niños">5 niños</option>
+          </optgroup>
+        </select>   
+        <select>
+          <optgroup label="Niños entre 4-12">
+            <option value="1niño">1 niño</option>
+            <option value="2niños">2 niños</option>
+            <option value="3niños">3 niños</option>
+            <option value="4niños">4 niños</option>
+            <option value="5niños">5 niños</option>
+          </optgroup>
+        </select>
+          <label>Viajeros</label>
+      </div>
+    </div>
+    <div class="row">
+      <p>Transporte</p>
+      <p class="col s2">
+        <input class="with-gap" name="group1" type="radio" id="test1" />
+        <label for="test1">Barco</label>
+      </p>
+      <p class="col s2">
+        <input class="with-gap" name="group2" type="radio" id="test2" />
+        <label for="test2">Avión</label>
+      </p>
+        <p class="col s2">
+        <input class="with-gap" name="group3" type="radio" id="test3" />
+      <label for="test3">Coche</label>
+      </p>
+      <p class="col s2">
+        <input class="with-gap" name="group4" type="radio" id="test4" />
+        <label for="test4">Tren</label>
+      </p>
+      <p class="col s2">
+        <input class="with-gap" name="group5" type="radio" id="test5" />
+        <label for="test5">bicleta</label>
+      </p>
+      <p class="col s2">
+        <input class="with-gap" name="group6" type="radio" id="test6" />
+        <label for="test6">Caminando</label>
+      </p>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <input type="date" class="datepicker">
+      </div>
+      <p class="col s2">
+        <input type="checkbox" class="filled-in" id="boxRural" />
+        <label for="boxRural">Rural</label>
+      </p>
+      <p class="col s2">
+        <input type="checkbox" class="filled-in" id="boxUrbano" />
+        <label for="boxUrbano">Urbano</label>
+      </p>
+      <p class="col s2">
+        <input type="checkbox" class="filled-in" id="boxDesierto" />
+        <label for="boxDesierto">Desierto</label>
+      </p>
+    </div>
+    <div class="row">
+      <p class="col s12 range-field">
+        <label for="test5">Presupuesto</label>
+        <input type="range" id="rango" min="100" max="300" />
+      </p>
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" maxlength="300"></textarea>
+        <label for="textarea1">Textarea</label>
+      </div>
+    </div>
+    <button class=" btn waves-effect waves-light" type="submit" name="action">Enviar
+      <i class="fa fa-check" aria-hidden="true"></i>
+    </button>
+    <button class=" btn waves-effect waves-light" type="reset" name="action">Borrar
+      <i class="fa fa-check" aria-hidden="true"></i>
+    </button>
+  </form>
+</div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+<!-- 
+Añade el código necesário para trabajar con el Framework MaterializeCss
+
+Crea un formulario para hacer un buscador de viajes
+Campos:
+-Origen: máximo 100 caracteres
+-Destino: máximo 100 caracteres
+-Tipo de viaje: a elegir uno (Con amigos, con amigas, solo, en familia, en pareja)
+-Viajan mascotas?
+-Transporte: a elegir uno o vários (barco, avión, coche, tren, bicicleta, caminando)
+-Presupuesto por persona: rango desde 100 a 3000
+-Mes de salida
+-Viajeros (adultos): Solo, 2 personas, 3, 4, 5, 6, 7, 8
+-Viajeros (niños entre 0-3): 1, 2, 3, 4, 5
+-Viajeros (niños entre 4-12): 1, 2, 3, 4, 5
+-Ambiente: a elegir uno o varios (rural, urbanita, desierto)
+-Comentario: texto con un máximo de 300 caracteres.
+-Botón "enviar"
+
+El action del formulario debe ser a la url "php/buscaViaje.php"
+
+Añade botón para borrar datos formulario
+
+El método debe ser por POST
+ -->
+
