@@ -1,0 +1,61 @@
+﻿*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+wrapper {width:90%;}
+/*** estilos ensaladas ****/
+#ensaladas .card-reveal{
+	background-color: #fff8e1; 
+}
+#ensaladas .card-reveal span{
+	color: #ffffff;
+}
+/*** estilos Primeros platos ****/
+#primerosPlatos .card-reveal{
+	background-color: #fff8e1;
+	color: white;
+}
+#primerosPlatos .card-reveal span{
+	color: #ffffff;
+}
+/*** estilos Postres ****/
+#postres .card-reveal{
+	background-color: #fff8e1;
+	color: white;
+}
+#postres .card-reveal span{
+	color: #ffffff;
+}
+/*** Posición del boton flotante ***/
+.posicion{
+	position: relative;
+	display: inline-block;
+	left: 220px;
+	bottom: 0;
+	z-index:20;
+}
+
+h2, li a.btn-floting{
+	text-shadow: 5px 5px 5px rgba(150, 150, 150, 2);
+	background-color:#ffe082;
+}
+
+/* menu despegable */
+
+.despegable{
+	position:relative;
+	display:block;
+}
+.submenu li{
+	float:none;
+	background-color:#ffc107;}
+.submenu {
+	position:absolute;
+	z-index:1000;
+	opacity:0;
+	transition: all .3s ease-in .15s;
+	
+}
+nav  .despegable:hover  .submenu{opacity:1;}
+	
