@@ -10,7 +10,7 @@
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!-- Custom CSS Style -->
-        <link type="text/css" rel="stylesheet" href="css/styles.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
         <title>Ejercicio 5</title>
     </head>
 
@@ -18,7 +18,221 @@
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/buscarviajes.js"></script>
+        
+         <script>
+            $(document).ready(function() {
+                $('select').material_select();
+                
+                $('#presupuesto').change(function() {
+                    $('#valorP').val($(this).val());
+		          });
 
+                $('input.o_autocomplete').autocomplete({
+                    data: {
+                      "Barcelona": null,
+                      "Reus": null,
+                      "Girona": null,
+                      "Madrid": null,
+                      "Santiago de Compostela": null
+                    }
+                });
+                $('input.d_autocomplete').autocomplete({
+                    data: {
+                      "Hawai": null,
+                      "Shangai": null,
+                      "New York": null,
+                      "Paris": null,
+                      "Roma": null,
+                      "Tokyo": null
+                    }
+                });
+
+            });
+        </script>
+
+
+        <div class="container">
+            
+            
+            <form action="" method="POST" id="buscarviaje">
+            <div id="banner" class="col s12 m12 l12">
+                <img src="img/viajes3-banner.png" alt="banner_viajes">
+            </div>
+                <!-- <h1 class="center">BUSCADOR DE VUELOS</h1> -->
+                <div class="row">
+
+                    <div class="col s12 m6 l6 input-field p-margen">
+                        <input placeholder="Origen" id="vOrigen" class="o_autocomplete" type="text" name="origen_vuelo" class="validate" maxlength="100">
+                        <label for="vOrigen" data-success="Correcto">Oringen:</label>
+                    </div>
+
+                    <div class="col s12 m6 l6 input-field p-margen">
+                        <input placeholder="Destino" id="vDestino" class="d_autocomplete" type="text" name="destino_vuelo" class="validate" maxlength="100">
+                        <label for="vDestino" data-success="Correcto">Destino:</label>
+                    </div>
+
+                    <div class="col s12 m12 l12 input-field p-margen">
+
+                        <h5>Con quien viajara?</h5>
+                        <div class="col s6 m6 l2">
+                            <input class="with-gap" name="tipo_viaje" type="radio" id="con_amigos" />
+                            <label for="con_amigos">Con amigos</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input class="with-gap" name="tipo_viaje" type="radio" id="con_amigas" />
+                            <label for="con_amigas">Con amigas</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input class="with-gap" name="tipo_viaje" type="radio" id="solo"  />
+                            <label for="solo">Solo</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input class="with-gap" name="tipo_viaje" type="radio" id="en_familia"  />
+                            <label for="en_familia">En família</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input class="with-gap" name="tipo_viaje" type="radio" id="en_pareja"  />
+                            <label for="en_pareja">En pareja</label>
+                        </div>
+
+                    </div>
+                    <div class="col s12 m12 l12 input-field p-margen">
+
+                        <h5>Que tipo de transporte prefiere?</h5>
+                        
+                        <div class="col s6 m6 l2">
+                            <input type="checkbox" name="tipo_transporte" id="barco" />
+                            <label for="barco">Barco</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input type="checkbox" name="tipo_transporte" id="avion" />
+                            <label for="avion">Avión</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input type="checkbox" name="tipo_transporte" id="coche" />
+                            <label for="coche">Coche</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input type="checkbox" name="tipo_transporte" id="tren" />
+                            <label for="tren">Tren</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input type="checkbox" name="tipo_transporte" id="bicicleta" />
+                            <label for="bicicleta">Bicicleta</label>
+                        </div>
+                        <div class="col s6 m6 l2">
+                            <input type="checkbox" name="tipo_transporte" id="caminando" />
+                            <label for="caminando">Caminando</label>
+                        </div>
+
+                    </div>
+                    <div class="col s12 m12 l12 p-margen">
+
+                        <div class="range-field">
+                            <h5>Presupuesto por persona en € de 100€ a 3000€</h5>
+                            <div class="col s4 m4 l2">
+                                <p>Precio Seleccionado:</p>
+                            </div>
+                            <div class="col s4 m2 l1">
+                                <input type="text" name="valorP" id="valorP" value="" class="right-align">
+                            </div>
+                            <div class="col s4 m4 l1">
+                                <p>€</p>
+                            </div>
+                            <input type="range" name="presupuesto" id="presupuesto" min="100" max="3000" />
+                        </div>
+
+                    </div>
+
+                    <div class="col s12 m12 l12 input-field p-margen center">
+                        <h5>Seleccione el mes:</h5>
+                        <input type="month" name="mes_anyo" id="mes_anyo" class="center-align" />
+                    </div>
+
+                    <div class="col s12 m12 l12 p-margen">
+                        <h5>Viajeros:</h5>
+                        
+                        <div class="col s12 m3 l3 input-field">
+                            <select name="v_adultos">
+                                <option value="" disabled selected>Ninguno</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                            <label><h6>Adultos:</h6></label>
+                        </div>
+
+                        <div class="col s12 m3 l3 input-field">
+                            <select name="v_ninyos_0_3">
+                                <option value="" disabled selected>Ninguno</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <label><h6>Niños de 0 a 3 años</h6></label>
+                        </div>
+
+                        <div class="col s12 m3 l3 input-field">
+                            <select name="v_ninyos_4_12">
+                                <option value="" disabled selected>Ninguno</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <label><h6>Niños de 4 a 12 años</h6></label>
+                        </div>
+
+                        <!-- Switch -->
+                        <div class="col s12 m3 l3 switch">
+                            <label><h6>Mascotas?</h6></label>
+                            <label>
+                               No
+                               <input type="checkbox" name="mascotas">
+                               <span class="lever"></span>
+                               Si
+                            </label>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col s12 m12 l12 input-field">
+                        <h5>Cual es el ambiente que usted prefiere?</h5>
+                            <select class="icons" name="ambiente">
+                                <option value="" disabled selected>Escoja una opción</option>
+                                <option value="1" data-icon="img/rural_1.jpg" class="circle">Rural</option>
+                                <option value="2" data-icon="img/urbanista_1.jpg" class="circle">Urbanista</option>
+                                <option value="3" data-icon="img/desierto_1.jpg" class="circle">Desierto</option>
+                            </select>
+                    </div>
+
+                    <div class="col s12 m12 l12 input-field">
+                        <textarea id="comentario" name="comentarios" class="materialize-textarea" data-length="300"></textarea>
+                        <label for="comentario"><h6>Comentarios:</h6></label>
+                    </div>
+                </div>
+                <div class="center">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                        <i class="material-icons right">flight</i>
+                    </button>
+                    <button class="btn waves-effect waves-light" type="reset" name="action">Borrar Formulario
+                        <i class="material-icons right">delete_sweep</i>
+                    </button>
+                </div>
+
+
+            </form>
+        </div>
 
 </body>
 </html>

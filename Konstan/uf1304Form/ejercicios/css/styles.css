@@ -1,0 +1,20 @@
+h1 {
+	font-size: 3em;
+	color: #0012FF;
+}
+
+div {
+	padding: 1em;
+	padding-left: 2em;
+}
+
+#container {
+	background-image: url("../img/fondoform.jpg");
+	background-repeat: no-repeat;
+}
+
+label {
+	color: #DD0000;
+	font-weight: bold;
+	font-size: 1.5em;
+}
