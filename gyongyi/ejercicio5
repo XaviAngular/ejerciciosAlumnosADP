@@ -1,0 +1,244 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <meta charset="UTF-8">
+	  
+	  <style>
+		body {background-color:#CEECF5}
+		.header {
+			background-image: url("img/header1.jpg");
+			background-repeat: no-repeat;
+			background-size: 100%;
+			margin: auto;
+		}
+		.header h2 {
+			text-align: center;
+			margin:auto;
+			padding: 2em 0 2em 0;
+			color: white;
+			text-shadow: 2px 2px #ff0000;
+			font-size: 2em;
+		}		
+		
+		.box {
+			width:80%;
+			margin: auto;
+			font-family: sans-serif;
+			font-size: 14px;
+			}
+		button{margin-left:1em;
+		}
+
+		label.comentario { margin-left:1em;}
+				
+	</style>
+	  
+	</head>
+
+    <body>
+	 	<!--Import jQuery before materialize.js-->
+      	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      	<script type="text/javascript" src="js/materialize.min.js"></script>
+      	<script type="text/javascript" src="js/scriptForm.js"></script>
+		<script>
+			 $(document).ready(function() {
+				$('input.autocomplete').autocomplete({
+				data: {
+				  "Barcelona":null,
+				  "Reus": null,
+				  "Girona": null,
+				  "Reus": null,
+				  "Madrid": null,
+				  "Santiago de Compostela": null,
+				  "Hawai": null,
+				  "Shangai": null,
+				  "New York": null,
+				  "Roma": null,
+				  "Tokyo": null,				
+				},
+				limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+				});
+
+			});			  
+		</script>
+						
+		<script>
+			$(document).ready(function() {
+					var debug=true;
+					$('select').material_select();
+					$("#buscaViaje").submit(function(event){		//el submit enviaria el usuario a ortra pagina
+					event.preventDefault();	//Evita el refresh automático que se produce al enviar el form
+					
+					//ESTO es la forma de obtener datos del formulario y convertirlo en formato JSON
+					var jsonData = JSON.stringify($("#buscaViaje").serializeArray()); //Esta regla es muy importante. hace todos arrays
+					if(debug) console.log("Datos en Json:");
+					if(debug) console.log(jsonData);
+					$.ajax({
+						url:'http://www.travek.com/search',
+						type: 'GET',
+						dataType: 'json',
+						data: jsonData,
+						success : function(result){
+							if(debug) console.log (result.campos);
+							if(debug) console.log (result.valores);
+							if(debug) console.log (result.sql);
+							if(debug) console.log (result.resultado);
+							console.log (result.sql);
+							if (result.error===0) {
+								Materialize.toast('Categoría creada!', 6000) // el numero muestra la duracion de la nota (en microsecondes)
+								//$('#formCat')[0].reset(); --para que haga un reset para el formulario. (vaciar aereas de formulario)pero mejor con el trigger:
+								$("#buscaViaje").trigger("reset");
+							}
+							else {
+								Materialize.toast('Error al crear categoría!', 6000) 
+								//$('#formCat')[0].reset(); - pero mejor con trigger:
+								$("#buscaViaje").trigger("reset");
+							}
+						},
+						error : function(result){
+							alert("errorrrrrrr!!!");
+						}
+					})
+					});
+				});	
+		</script>		
+
+
+
+		<div class="header col l12 m12 s12 input-field">
+			<h2>BUSCADOR DE VIAJES</h2>
+		</div>
+	    
+		<div class="box">
+			<div class="row">					
+				<form id="buscaViaje" action="php/buscaViaje.php" method="post">					
+					<div class="input-field col l6 m6 s12">
+						<input type="text" id="autocomplete-input" name="origen" class="autocomplete">
+						<label for="autocomplete-input">Autocompletar Origen</label>									
+					</div>
+					
+					<div class="input-field col l6 m6 s12">
+						<input type="text" id="autocomplete-input" name="origen" class="autocomplete">
+						<label for="autocomplete-input">Autocompletar Destino</label>									
+					</div>	
+					
+					<div class="input-field col l6 m6 s12">
+						<select id="tipodeviaje" name="tipodeviaje" class="validate" required="">
+						<option value="" disabled selected>Tipo de viaje</option> 
+						 <option value="conamigos">Con amigos</option>
+						 <option value="conamigas">Con amigas</option>
+						 <option value="solo">Solo</option>
+						 <option value="enfamilia">En familia</option>
+						 <option value="enpareja">En pareja</option>
+						</select>							
+					</div>						
+					
+					<div class="input-field col l6 m6 s12">
+						<select multiple id="modosdetransport" name="modosdetransport" class="validate"required="">
+						  <option value="" disabled selected>Modos de transporte</option>
+						  <option value="Barco">Barco</option>
+						  <option value="Avión">Avión</option>
+						  <option value="Coche">Coche</option>
+						  <option value="Tren">Tren</option>
+						  <option value="Bicicleta">Bicicleta</option>
+						  <option value="Caminando">Caminando</option>
+						</select>							
+					</div>		
+					
+					<div class="input-field col l6 m6 s12">
+						<select multiple id="ambiente" name="ambiente" class="validate" required="">
+						<option value="" disabled selected>Ambiente</option> 
+						 <option value="rural">Rural</option>
+						 <option value="urbanita">Urbanita</option>
+						 <option value="desierto">Desierto</option>							 
+						</select>							
+					</div>											
+			
+					<div class="col l6 m6 s12 input-field">
+						<select name="adultos" id="adultos" required="">
+						<option value="" disabled selected>Número de Adultos</option>
+						 	<option value="1a">1 Adulto</option>
+							<option value="2a">2 Adultos</option>
+							<option value="3a">3 Adultos</option>
+							<option value="4a">4 Adultos</option>
+							<option value="5a">5 Adultos</option>
+							<option value="6a">6 Adultos</option>
+							<option value="7a">7 Adultos</option>
+							<option value="8a">8 Adultos</option>
+						</select>
+					</div>		
+
+					<div class="col l6 m6 s12 input-field">
+						<select name="bebes" id="bebes" required="">
+						<option value="" disabled selected>Número Niños entre 0-3 años</option>						  
+						 	<option value="1n">1 niño (0-3 años)</option>
+							<option value="2n">2 niños (0-3 años)</option>
+							<option value="3n">3 niños (0-3 años)</option>
+							<option value="4n">4 niños (0-3 años)</option>
+							<option value="5n">5 niños (0-3 años)</option>
+						</select>							
+					</div>			
+
+					<div class="col l6 m6 s12 input-field">
+						<select name="ninos" id="ninos" required="">
+						<option value="" disabled selected>Número Niños entre 4-12 años</option>						  
+						  	<option value="1j">1 niño (4-12 años)</option>
+							<option value="2j">2 niños (4-12 años)</option>
+							<option value="3j">3 niños (4-12 años)</option>
+							<option value="4j">4 niños (4-12 años)</option>
+							<option value="5j">5 niños (4-12 años)</option>						  
+						</select>							
+					</div>
+					
+					<div class="col l6 m6 s12 input-field">
+					<label>Fecha de la salida</label><br>
+					<input id="fechasalida" type="date" name="fechasalida" class="datepicker validate" required="">
+					</div>	
+					
+					<div class="input-field col l6 m6 s12">
+						<input id="checkMascotas" name="checkMascotas" type="checkbox">
+						<label for="checkMascotas">Viajan mascotas?</label>
+					</div>	
+					
+					<div class="col l12 m12 s12 input-field">
+					<label>Presupuesto por persona</label><br><br>						
+					<input class="range-field" type="range" id="presupuesto" name="presupuesto" min="100" max="3000" >
+					</div>							
+					
+					<div class="input-field col l12 m12 s12">
+						<textarea id="comentario" name="comentario" class="comentario" type="text" maxlength="300"></textarea>
+						<label for="comentario" class="comentario">Commentario</label>
+					</div>					
+					
+					<div class="input-field col l6 m6 s12">     
+					<button class="btn waves-effect waves-light" type="submit" name="submit">Enviar
+					</button>
+					</div>
+					
+					<div class="input-field col l6 m6 s12">
+					<button class="btn waves-effect waves-light" type="reset" name="reset">Reset
+					</button>
+					</div>
+					
+				</form>
+          	</div>
+		</div>
+    </body>
+  </html>
+  
+  
+  
+<!-- 
+Haz una copia del ejercicio4 y aplica las siguientes modificaciones:
+Campo origen: Autocompletar con las siguientes ciudades (Barcelona, Reus, Girona, Madrid, Santiago de Compostela)
+Campo destino: Autocompletar con las siguientes ciudades (Hawai, Shangai, New York, Paris, Roma, Tokyo)
+El action del formulario debe ser por ajax, crea el script básico de envío y de llamada ajax, la url de llamada es "http://www.travek.com/search".
+El método debe ser por GET
+ -->

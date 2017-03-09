@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body {background-color:#CEECF5}
+	.container {
+		width:80%;
+		margin: auto;
+		margin-top: 6em;
+		font-family: sans-serif;
+		font-size: 30px;
+		text-align:center;		
+	}
+	#searchbox {
+		min-width: 80%;
+		min-height: 2em;
+	}
+	#boton {font-size: 25px;
+
+
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form action="https://www.google.es/search" method="get">
+			Estoy buscando información sobre:<br><br>
+			<input id="searchbox" type="text" name="searchbox"<br>
+			<br><br>
+			<input id="boton" type="submit" name="q" value="Enviar">
+		</form>
+	</div>
+</body>
+</html>
+<!-- 
+Crea un formulario con un único campo de tipo text
+El action del formulario debe ser a la url "https://www.google.es/search"
+El método debe ser por GET
+La variable que se envia al hacer submit debe tener el nombre "q"
+ -->

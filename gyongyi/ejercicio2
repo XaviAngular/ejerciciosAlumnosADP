@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body {
+		background-color:#CEECF5;
+		margin: 0 0 0 0 ;}
+	.header {
+		background-image: url("img/headercat1.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		margin: 0 0 0 0 ;
+		min-height: 170px;
+		}
+	.header h1 {
+		margin:auto;
+		padding-left: 2em;
+		text-shadow: 2px 2px #fff;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		}	
+	.container {
+		width:100%;
+		height: 100%;
+		margin: auto;
+		font-family: sans-serif;
+		font-size: 20px;
+	}
+	img {
+	    display: block;
+	    margin: auto;
+		margin-top: 0;
+	    width: 60%;
+	}
+	#nombreMascota, #edad, #tipoMascota {
+		min-width: 100%;
+		min-height: 2.5em;
+	}
+	form{
+	margin: 2% 10% 0 10%;
+	}
+	#submit{font-size: 20px;}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header" >
+			<h1>REGISTRO DE ANIMALES</h1>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<form id="registro" action="php/recibeMascota.php" method="post" >
+						Nombre de mascota:<br>
+						<input id="nombreMascota" name="nombreMascota" type="text" required>
+						<br><br>
+						Edad de la mascota:<br>
+						<input id="edad" name="edad" type="number" required min="1" max="20">
+						<br><br>
+						Tipo de mascota:
+						<br>
+						<select id="tipoMascota" name="tipoMascota" required class="initialized">
+							<option value="" disabled selected></option>
+							<option value="perro">perro</option>
+							<option value="gato">gato</option>
+							<option value="ave">ave</option>
+							<option value="pez">pez</option>
+							<option value="reptil">reptil</option>
+							<option value="otro">otro</option>
+						</select>
+						<br><br>
+						<input type="checkbox" name="castrado">Marca la casilla si la mascota esta castrada.<br><br>
+
+						Número de chip:<br>
+						<input id="edad" name="edad" type="text" required maxlength="7" pattern="[0-9]{4}+[A-Za-z]{3}">
+						<br><br><br>
+
+						<input id="submit" type="submit" value="Enviar">
+					</form>
+				<img src="http://trentonpethospital.com/wp-content/uploads/pets.png">
+
+			</div>	
+		</div>	
+	</div>
+</body>
+</html>
+<!-- 
+Crea un formulario para el registro de animales de compañía con los siguientes campos:
+Nombre de la mascota (obligatorio)
+Edad de la mascota (valores entre 1 y 20) (obligatorio)
+Tipo de mascota (Desplegable con perro, gato, ave, pez, reptil, otro)
+Castrado con (checkbox) (obligatorio)
+Nº de chip (4 número y 3 letras)
+El action del formulario debe ser a la url "php/recibeMascota.php"
+El método debe ser por POST
+ -->
