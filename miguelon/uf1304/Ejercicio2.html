@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<form method ="POST" action="php/recibeMascota.php">
+  <fieldset>
+    <legend>Informacion obligatoria de tu mascota:</legend>
+    Nombre de mascota:<br>
+    <input type="text" name="" value="" required=""><br>
+    
+	Edad de la mascota:<br>
+    <input type="number" name="" value="" min="1"  max="20" required ><br>
+
+    
+    
+   <label >Tipo de la mascota</label>
+    <br>
+     <input list="Pets">
+	  <datalist id="Pets">
+	    <option value="Perro">
+	    <option value="Gato">
+	    <option value="Pez">
+	    <option value="Reptil">
+	    <option value="Otro">
+	  </datalist> 
+	  
+	</br>
+
+    Nº de chip:<br>
+    <input type="text" name="" value="" pattern="[1-9]{4}[A-Za-z]{3}"><br>
+    <input type="checkbox" name="Castrado" value="Castrado">Castrado<br>
+    <input type="submit" value="Enviar"><br>
+    
+  </fieldset>
+ </form>
+
+
+</body>
+</html>
+<!-- 
+Crea un formulario para el registro de animales de compañía con los siguientes campos:
+Nombre de la mascota (obligatorio)
+Edad de la mascota (valores entre 1 y 20) (obligatorio)
+Tipo de mascota (Desplegable con perro, gato, ave, pez, reptil, otro)
+Castrado con (checkbox)
+Nº de chip (4 número y 3 letras)
+
+El action del formulario debe ser a la url "php/recibeMascota.php"
+El método debe ser por POST
+ -->
