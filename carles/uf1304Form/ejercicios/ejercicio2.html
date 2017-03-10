@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicos de formularios</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <form class="col s12" action="php/recibeMascota.php" method="POST">
+    <h3>Datos de su mascota</h3>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Nombre de la mascota" autofocus name="nombre" id="nombreMascota" type="text" class="validate" required="required" pattern="[A-Za-z]*" value="wefvqeqer">
+          <label for="nombreMascota" data-error="Error en los datos" data-success="Correcto">Nombre de la mascota</label>
+        </div>
+        <div class="input-field col s6">
+            <input placeholder="Nombre de la mascota" name="edad" id="edad" type="number" class="validate" required="required" value="12" min="0" max="20">
+          <label for="edad" data-error="Error en los datos" data-success="Correcto">Edad de la mascota</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select name="tipo">
+            <option value="perro" selected data-icon="img/perro.jpg" class="circle left">perro</option>
+            <option value="gato" data-icon="img/gatos.jpg" class="circle left">gato</option>
+            <option value="ave" data-icon="img/ave.jpg" class="circle left">ave</option>
+            <option value="pez" data-icon="img/pez.jpg" class="circle left">pez</option>
+            <option value="reptil" data-icon="img/reptil.jpg" class="circle left">reptil</option>
+            <option value="otro" data-icon="img/gorila.jpg" class="circle left">otro</option>
+          </select>
+          <label>Tipo de mascota</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Esccriba 4 numeros y 3 letras sin espacion" name="chip" id="nChip" type="text" class="validate" maxlength="7" pattern="[0-9]{4}[A-Za-z]{3}" value="1234qwe">
+          <label for="nChip" data-error="Error en los datos" data-success="Correcto">Nº del chip</label>
+        </div>
+      </div>
+      <div class="row">
+         <div class="switch col s6">
+            <label>
+            Castrado
+            <input name="castrado" type="checkbox"/>
+            <span class="lever"></span>
+            No Castrado
+            </label>
+            </div>
+        <button class="btn waves-effect waves-light col s6" type="submit" name="enviar">Enviar
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </button>
+      </div>
+     
+    </form>
+  </div>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+<!-- 
+Crea un formulario para el registro de animales de compañía con los siguientes campos:
+Nombre de la mascota (obligatorio)
+Edad de la mascota (valores entre 1 y 20) (obligatorio)
+Tipo de mascota (Desplegable con perro, gato, ave, pez, reptil, otro)
+Castrado con (checkbox) (obligatorio)
+Nº de chip (4 número y 3 letras)
+El action del formulario debe ser a la url "php/recibeMascota.php"
+El método debe ser por POST
+ -->
