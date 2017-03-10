@@ -20,6 +20,7 @@ $(document).ready(function() {
        			},
     			limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
   			});
+        var jsonData = JSON.stringify($("#addCat").serializeArray());
   		$.ajax({
         url: 'http://www.travek.com/search',
         type: 'GET',
