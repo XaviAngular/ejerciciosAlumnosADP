@@ -56,18 +56,17 @@
 			<br>
 			<label for="Tipo">Tipo de Mascota</label>
 			<br>
-			<input type="text" list="Tipo" name="Tipo" placeholder="Tipo de Mascota">
-				<datalist id="Tipo">
-					<option value="Perro">
-					<option value="Gato">
-					<option value="Ave">
-					<option value="Pez">
-					<option value="Reptil">
-					<option value="Otro">
-				</datalist>
+			<select id="Tipo" name="Tipo">
+				<option value="Perro"> Perro </option>
+				<option value="Gato"> Gato </option>
+				<option value="Ave"> Ave </option>
+				<option value="Pez"> Pez </option>
+				<option value="Reptil"> Reptil </option>
+				<option value="Otro"> Otro </option>
+			</select>
 			<br>
 			<label for="chip">Nª de Chip</label>
-			<input type="text" name="chip" maxlength="7" pattern="([0-9]{4}[A-Za-z]{3})" placeholder="nnnnLLL">
+			<input type="text" name="chip" maxlength="7" pattern="(([0-9]{4})([A-Za-z]{3}))" placeholder="nnnnLLL">
 			<br>
 			<label for="Castrado">Castrado</label>
 			<input type="checkbox" name="Castrado" value="castrado">
