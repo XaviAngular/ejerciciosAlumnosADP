@@ -34,7 +34,12 @@ h1{font-size:2em}
 .btn:hover{
   cursor: pointer;
 }
+#borrar, #close {
+  font-size: 0.6em;
+  padding: 2px;
+}
 .right{float: right;}
+.close{display:none;}
 .resultado{
   width: 90%;
   height: auto;
@@ -47,8 +52,4 @@ h1{font-size:2em}
   height: 200px;
   margin:20px auto;
 }
-.small{
-  background-color: orange;
-  font-size: 0.5em;
-  padding: 5px;
-}
+

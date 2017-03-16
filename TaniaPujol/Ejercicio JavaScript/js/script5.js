@@ -5,28 +5,41 @@ $(document).ready(function(){
     console.log("cargado script de funciones")
   })
   $("#mensual").click(function (){
-    var resulMensual = irpf($("#irpf").val());
+    var resulMensual = irpf($("#irpf").val(),$("#sueldo").val());
     console.log(resulMensual);
     var nombre = $("#nombre").val();
-    var btn =`<button type="reset" id="borrar" class="btn right"> borrar</button>`;
-    var btn_s =`<button type="button" id="close" class="btn right small"> X</button>`
     var imprimir =`
       <div class="resul">
-        ${btn_s}
         <p> Hola ${nombre} !!! <br>
             tu Irpf Mensual es : ${resulMensual} €
         </p>
-        ${btn}
       </div>`;
     $(".resultado").append(imprimir);
+    $("#close").show();
+    $('#close').click(function() {
+      $(".resul").remove();
+    });
   });
-  $('#close').click(function() {
-    // $(".resul").remove();
-    alert('vas a borrar');
-  });
+  
   $("#anual").click(function (){
-    var resulAnual = irpfAnual();
-    console.log(resulAnual);
+    // var resulAnual, porCiento = irpfAnual();
+    var resultado = irpfAnual();
+    var resulAnual = resultado[0];
+    var porCiento = resultado[1];
+    console.log(resulAnual,porCiento);
+    var nombre = $("#nombre").val();
+    var imprimir =`
+      <ul class="resul">
+        
+      </ul>`;
+      var lista = document.createElement('ul');
+    var item = document.createElement('li');
+    lista.appendChild(item);
+    $(".resultado").appendChild(imprimir);
+    $("#close").show();
+    $('#close').click(function() {
+      $(".resul").remove();
+    });
   })
 // fin del jquery
 });
