@@ -9,18 +9,13 @@ $(document).ready(function(){
     console.log(resulMensual);
     var nombre = $("#nombre").val();
     var imprimir =`
-      <div class="resul">
-        <p> Hola ${nombre} !!! <br>
-            tu Irpf Mensual es : ${resulMensual} €
-        </p>
-      </div>`;
-    $(".resultado").append(imprimir);
+      <p class="mas"> Hola ${nombre} !!! <br>
+          tu Irpf Mensual es : ${resulMensual} €
+      </p>`;
+    $(".result").append(imprimir);
     $("#close").show();
-    $('#close').click(function() {
-      $(".resul").remove();
-    });
   });
-  
+
   $("#anual").click(function (){
     // var resulAnual, porCiento = irpfAnual();
     var resultado = irpfAnual();
@@ -29,17 +24,15 @@ $(document).ready(function(){
     console.log(resulAnual,porCiento);
     var nombre = $("#nombre").val();
     var imprimir =`
-      <ul class="resul">
-        
-      </ul>`;
-      var lista = document.createElement('ul');
-    var item = document.createElement('li');
-    lista.appendChild(item);
-    $(".resultado").appendChild(imprimir);
+      <p class="mas"> Hola ${nombre} !!! <br>
+          tu retencion ${porCiento}% es : ${resulAnual} €
+      </p>`;
+    $(".result").append(imprimir);
     $("#close").show();
-    $('#close').click(function() {
-      $(".resul").remove();
-    });
-  })
+  });
+  // en esta funcion lo que realizamos es el borrado del ultimo parafo creado. para borrarlo todo solo se debe clicar tantas veces como parafos existan
+  $('#close').click(function() {
+    $(".result").children("p[class=mas]:last").remove();
+  });
 // fin del jquery
 });

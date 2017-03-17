@@ -7,23 +7,25 @@
 	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-	<div class="container">
-		<form>
-			<h1>Calcula tu Irpf</h1>
-			<hr>
-			<div class="box">
-				Nombre del Empleado : <br> <input type="text" id="nombre"><br>
-				Salario base mensual : <br> <input type="number" id="sueldo" required="Valor requerido"><br>
-				IRPF : <br> <input type="number" id="irpf" required="">
-				<button type="reset" id="borrar" class="btn">Borrar Datos</button>
-			</div>
-			<button type="button" id="mensual" class="btn"> Calcula irpf Mensual </button>
-			<button type="button" id="anual" class="btn right"> Calcula irpf Anual</button>
-			<div class="resultado">
-				<button type="button" id="close" class="btn right close">X</button>
-				<div class="result"> </div>
-			</div>
-		</form>
+	<div id="wrapper">
+		<div class="container">
+			<form>
+				<h1>Calcula tu Irpf</h1>
+				<hr>
+				<div class="box">
+					Nombre del Empleado : <br> <input type="text" id="nombre"><br>
+					Salario base mensual : <br> <input type="number" id="sueldo" required="Valor requerido"><br>
+					IRPF : <br> <input type="number" id="irpf" required="">
+					<button type="reset" id="borrar" class="btn">Borrar Datos</button>
+				</div>
+				<button type="button" id="mensual" class="btn"> Calcula irpf Mensual </button>
+				<button type="button" id="anual" class="btn right"> Calcula irpf Anual</button>
+				<div class="resultado">
+					<button type="button" id="close" class="btn right close">X</button>
+					<div class="result"> </div>
+				</div>
+			</form>
+		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/script5.js"></script>
