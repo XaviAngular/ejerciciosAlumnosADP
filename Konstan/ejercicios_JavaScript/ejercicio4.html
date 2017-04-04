@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+        <!--Let browser know website is optimized for mobile-->
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Titulo Principal del Documento -->
+        <title>Ejercicio 4</title>
+
+    </head>
+    <body>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        
+        
+        <div class="container">
+            <form action="" method="">
+                <h2>Cambiar el Color de fondo</h2>
+                <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                      <select id="cambioColor" onChange="colorChange()">
+                        <option value="lime">Lima</option>
+                        <option value="blue-grey">Gris Azulado</option>
+                        <option value="deep-orange">Naranja</option>
+                        <option value="grey">Gris</option>
+                      </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                // Inicializar el Select
+                $('select').material_select(); 
+            });
+            // crear funcion colorChange()
+                function colorChange(){
+                    var nuevoColor = $("#cambioColor").val();
+                    switch  (nuevoColor) {
+                        case "lime":
+                            $('body').removeClass();
+                            $('body').addClass('lime');
+                            console.log(nuevoColor);
+                            break;
+                        case "blue-grey":
+                            $('body').removeClass();
+                            $('body').addClass('blue-grey');
+                            console.log(nuevoColor);
+                            break;
+                        case "deep-orange":
+                            $('body').removeClass();
+                            $('body').addClass('deep-orange');
+                            console.log(nuevoColor);
+                            break;
+                        case "grey":
+                            $('body').removeClass();
+                            $('body').addClass('grey');
+                            console.log(nuevoColor);
+                            break;
+                    }
+                }
+        </script>
+
+    </body>
+</html>
