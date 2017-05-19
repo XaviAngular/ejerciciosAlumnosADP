@@ -1,0 +1,31 @@
+body{
+    background-image: background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(blue));
+    background-image: -webkit-linear-gradient(top, white, blue);
+    background-image: -moz-linear-gradient(top, white, blue);
+    background-image: linear-gradient(to bottom, white, blue);
+    background-repeat: no-repeat;
+    min-height: 700px;
+}
+.container{
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+}
+#resultat{
+   border-left: 3px solid blue; 
+   min-height: 300px;
+}
+.input-field{
+    width: 80%;
+}
+.input-field label{
+   color: blue;
+}
+ .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
