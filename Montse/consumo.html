@@ -1,0 +1,107 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8">
+      <style>
+        h5 {
+          background-color: #607d8b;
+          color:#ffffff;
+        }
+      </style>
+    </head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <div class="container">  
+      <div class="row">
+        <div class="col s12 m8 l8">
+          <!-- Formulario entrada datos -->
+          <h5>Datos de consumo del coche</h5>
+          <form action="" method="POST" id="formDatos">
+            <div class="row">
+              <div class="input-field col s12 m12 l12">                  
+                  <input id="km" name="km" type="number"  step="0.1" class="validate" min="0.1">
+                  <label for="km" data-error="km con 1 decimal" >Kilometros a recorrer</label>
+              </div>
+              <div class="input-field col s12 m12 l12">                  
+                  <input id="gasolina" name="gasolina" type="number"  step="0.1" class="validate" min="0.1">
+                  <label for="gasolina" data-error="Consumo con 1 decimal">Consumo del vehículo (litros/100km)</label>
+              </div>
+              <div class="input-field col s12 m12 l12">                  
+                  <input id="precio" name="precio" type="number"  step="0.01" class="validate" min="0.01">
+                  <label for="precio" data-error="Precio por litro con 2 decimales">Precio por litro</label>
+              </div>
+              
+            </div>
+          </form>
+        </div>
+        <div class="col s12 m4 l4 left" id="resultado">
+              
+                  <h5 class="center">Gasto en combustible</h5>
+                  <span ></span>
+
+              
+        </div>
+        </div>
+        <div class="row">
+            
+            <div class="col s12 m4 l4 right-align">
+                  
+                <a class="waves-effect waves-light btn" onClick="calcularconsumo();">Calcular</a>
+                  
+            </div>
+            <div class="col s12 m8 l8">
+              
+            </div>
+        </div>
+      </div>
+      <script>
+        
+        var consumos = [];
+
+        function calcularconsumo(){
+            var km = $('#km').val();
+            var consumolitros = $('#gasolina').val();
+            var precio = $('#precio').val();
+
+            var litros = (km * consumolitros) / 100;
+            var gasto = litros * precio;
+            gasto = gasto.toFixed(2);
+            texto = "El consumo para "+km+" kms es de "+litros+" litros (teniendo en cuenta un consumo medio de "+consumolitros+" litros/100 km). <p>Si el combustible cuesta "+precio+" €/litro.<p> <b>El gasto en combustible previsto es de "+gasto+" €.</b>"
+            $('#resultado span').html(texto);
+
+            //Mirar si existe la variable en Local Storage
+            consumos =localStorage.getItem("JsonConsumo");
+
+            if (consumos != null){
+                //Existe en Local Storage - Se añade el nuevo objeto
+                consumos  = JSON.parse(consumos);
+            }
+            else {
+              //Se rellena el array por primera vez - Se añade el nuevo objeto
+              consumos = [];
+            }
+
+            consumos.push({kms:km,consumolitros:consumolitros,preciolitro:precio,gasto:gasto});
+            //Mostrar el array de consumo
+            console.log("Array de Consumos --> ");
+            console.log(consumos);
+            //Guardar datos en Local Storage
+            consumos = JSON.stringify(consumos);
+            localStorage.setItem("JsonConsumo",consumos);
+            
+        }
+        
+      </script>
+    </body>
+  </html>

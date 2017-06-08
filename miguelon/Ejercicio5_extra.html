@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejer_5_Extra</title>
+	<script>
+	var salario;
+	var sal1;
+	var irpf;
+	
+
+		function irpf(salario){
+		var retencion;
+			
+			switch(true){
+				case(retencion>0)&&(retencion<=12450): 
+				console.log ("retencion19%");
+				break;
+				case(retencion>=12451)&&(retencion<=20200): 
+				console.log ("retencion24%");
+				break;
+				case(retencion>=20201)&&(retencion<=35200): 
+				console.log ("retencion30%");
+				break;
+				case(retencion>=35201)&&(retencion<=60000): 
+				console.log ("retencion37%");
+				break;
+				default:
+					console.log("la retencion es 45%");
+
+
+			}
+		}
+		console.log(irpf(sal1));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

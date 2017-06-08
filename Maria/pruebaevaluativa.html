@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcula consumo</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+</head>
+
+<body>
+   <!--Import jQuery before materialize.js-->
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script>
+function calcula(km,consumo,preciolitro){
+	var litros= (km*consumo)/100;
+	console.log("los litros consumidos a los 100 son: "+consumo);
+	var gasto= (litros*preciolitro);
+	var pinta = "<p>El gasto para "+km+" km. es de "+litros+" litros de combustible y de "+gasto+ " euros.</p>";
+	$("#resultado").append(pinta); 
+} 
+
+function recibeDatos(){
+	var km=$("#km").val();
+	var consumo=$("#consumo").val();	
+    var preciolitro=$("#preciolitro").val();
+	calcula(km,consumo,preciolitro);
+}
+</script>
+<div class=container>
+<div class="row">
+<div class="col l8 m8 s12">
+<div id="datos">Kilómetros a recorrer
+<input type="number" id="km">Consumo a 100
+<input type="number" id="consumo">Precio litro combustible
+<input type="number" id="preciolitro">
+</div>
+</div>
+<div class="row">
+<div class="col l4 m4 s12">
+<div id="resultado">Resultado
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col l4 m4 s12">
+<div id="calcular">
+<button class="btn waves-effect waves-light" type="submit" name="action" onclick="recibeDatos()">Calcular
+<i class="material-icons right"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

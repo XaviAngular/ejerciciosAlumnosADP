@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  
+
+<head>
+	<meta charset="UTF-8">
+	<title>Retenciones salariales</title>
+	<script>		
+
+		var numero1;
+		var numero2;
+		numero1 = 7;
+		numero2 = 8;
+		
+
+
+	</script>
+		
+</head>
+<body>
+	<script>
+		if (numero1<= numero2) {
+			console.log(numero1+"no es mayor que"+numero2);
+		}
+		if (numero2>= 0) {
+			console.log(numero2+"es positivo");
+		}
+		if ((numero1 < 0) || (numero1 != 0 )) {
+			console.log(numero1+"es negativo o distinto de cero");
+		}
+		if (numero1++ <= numero2) {
+			
+			console.log("incrementar en 1 unidad el valor"+numero1+"no lo hace mayor o igual que"+numero2 );
+		}
+
+	</script>	
+	<input name="numero" id="numero" type="number">
+	<button onclick="parImpar()" id="comprobar">Test</button>
+	<span id="resultado" ></span>
+	<div id="container" >
+		
+	</div>
+	
+</body>
+</html>

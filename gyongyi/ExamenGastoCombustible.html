@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<!-- Añadir CSS propio -->
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<meta charset="utf-8">
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Gasto combustible de vehículos</title>
+	
+</head>
+<body style="background-image:url(tire1.jpg)">
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+<div class="container lime lighten-2">
+	<h2 style="padding-top: 30px; padding-bottom: 30px; margin-top: 0 " class="center teal lighten-2">CALCULO DE GASTOS <br>EN COMBUSTIBLE DE VEHÍCULOS</h2>
+
+	
+	<div class="row col s12 m12 l12">		
+		<div id="datos" class="col s12 m8 l8" style="padding-left:50px">
+		<h4>FORMULARIO</h4>
+		<form id="formConsumo">
+		Distancia en Km:
+		<input name="distancia" id="distancia" type="number" min="0" max="1000000" maxlength="10" required><br><br>
+		
+		Consumo del vehículo/100km:
+		<input name="consumo" id="consumo" type="number" min="0.01" max="25" maxlength="4"step="00.01" pattern="[0-9]{1,2}" required> <br><br>
+		
+		Precio/litro del combustible:
+		<input name="precio" id="precio" step="00.01" type="number" min="0" max="5"  required><br><br>
+		</div>
+		</form>
+
+		<div class="col s12 m4 l4" style="padding-left:50px">
+		<h4>RESULTADO</h4>
+		<div id="calculoLitros" name="calculoLitros" class="col s8 m8 l8" style="margin-bottom: 10px">
+		</div>
+
+		<div id="calculoGastos" name="calculoGastos" class="col s8 m8 l8">
+		</div>
+		</div>
+	</div>	
+
+	<div class="row col s12 m12 l12" style="padding-left:50px">
+		<div class="col s4 m4 l4">
+		<button onclick="calcGastos()" id="comprobar">Calcular</button><br><br>		
+		</div>
+	</div>
+	<h4 class="center teal lighten-2" style="padding-top: 40px; padding-bottom: 60px">GRACIAS POR UTILIZAR NUESTROS SERVICIOS.</h4>
+
+</div>
+	<script>
+
+		var distancia;
+		var consumo;
+		var precioCombustible;
+		var litros;
+		var gastos;
+
+		// distancia = 500;
+		// consumo = 6.50;
+		// precioCombustible = 1.17;
+
+		litros = distancia/100*consumo;
+		gastos = litros*precioCombustible;
+
+
+		// console.log ("El uso de combustible en litros es:"+litros);
+		// console.log ("El precio del combustible en euros es:"+gastos);
+		
+		var calculoArray=[]; //tiene que estar fuera del funcion, porque si esta dentro, siempre vacia el array y crea nueva. Si esta fuera, con el PUCH añade el nuevo objeto dentro de mismo array!!
+
+		function calcGastos(){
+				var distancia=$('#distancia').val(); 
+				var consumo=$('#consumo').val();
+				var precioCombustible=$('#precio').val();  						
+				
+				var litros=distancia*consumo/100;
+				var litros=litros.toFixed(2);
+				var gastos=litros*precioCombustible;
+				var gastos=gastos.toFixed(2); //para redondear el valor a dos decimos!
+				
+				//console.log('Litros de combustible necesario: '+litros);
+				//console.log('Gastos de combustible en euros: '+gastos);
+
+
+				$('#calculoLitros').text("El consumo para "+distancia+" Km es de " +litros+ " litros de combustible si se hace una media de "+consumo+" litro consumo a los 100Km."); 
+				$('#calculoGastos').text("Si el precio de combustible es "+precioCombustible+" €/litro, el viaje costa "+gastos+" €."); 
+				
+				$('#distancia').val("");  //para vaciar el formulario en el html
+				$('#consumo').val("");
+				$('#precio').val("");	
+				
+	
+		var hayPeticion=localStorage.getItem('peticion');
+		var calculo = {distancia:distancia, consumo:consumo, precio:precioCombustible, litros:litros, gastos:gastos};
+			//console.log(calculo);	
+
+		if (hayPeticion!=null) {					
+			hayPeticion=JSON.parse(hayPeticion);
+			hayPeticion.push(calculo);	
+			//console.log(hayPeticion);						
+		}
+		else{
+		var hayPeticion=[calculo];
+		}
+			
+		console.log(hayPeticion);		
+		localStorage.setItem('peticion',JSON.stringify(hayPeticion));
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcula consumo</title>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script>
+ var datos=[];
+function calcula(km,coche,precio){
+	var consumo= (km/100)*coche;
+	var gasto= (consumo*precio);
+	
+	console.log("el consumo es de: "+consumo);
+	var pinta = "<p>El consumo para "+km+" Km. es de "+consumo+" litros de combustible si se hace una media de "+coche+ " litro a los 100Km y por lo tanto el precio sera de "+gasto+"€.</p>";
+	$('#resultados span').html(pinta);
+    if (datos!=null){
+           datos.push({km:km,litros:coche,precio:precio,gasto:gasto});
+                    }
+    else {
+        datos=[];
+        datos.push({km:km,litros:coche,precio:precio,gasto:gasto});
+    }
+    console.log(datos);                
+}
+function recibeDatos(){
+	var km=$("#km").val();
+	var coche=$("#coche").val();
+	var precio=$("#precio").val();
+	calcula(km,coche,precio);
+}
+
+</script>
+<div class="row" id="datos">
+	<div class="col s8 m8 l8 ">
+		<form action="">	
+            <div class="input-field col s8 m8 l8" >
+                <input id="km" type="number" class="validate" min="0">
+                <label for="km">Kilómetros a recorrer</label>
+							
+			 </div>
+			
+                  <div class="input-field col s8 m8 l8" >
+                    <input id="coche" type="number" class="validate" min="0">
+                    <label for="coche">Consumo Medio</label>
+                </div>  
+            
+            
+			
+                    <div class="input-field col s8 m8 l8" >
+                        <input type="number" id="precio"  class="validate" min="0">
+                        <label for="precio">Precio del carburante</label>
+                    </div> 
+                  
+
+		</form>
+	</div>
+    <div id="resultados" class=" col s4 m4 l4" >
+        <h4>ESPERANZA AGUIRRE DICE..</h4>
+        <span></span>
+                        
+     </div> 
+
+</div>
+<div >
+    <button id="boton" onclick="recibeDatos()">Calcular</button>
+    
+
+</div>
+	
+
+
+</body>
+</html>

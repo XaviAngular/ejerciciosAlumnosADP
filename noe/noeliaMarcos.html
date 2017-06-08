@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calcula consumo</title>
+ 
+</head>
+
+<body>
+
+<div id="datos" class="row">
+<div class="col s8">
+<div class="input-field col s12">
+<input id="km" type="text" class="validate">
+<label for="km">kilometros </label>
+</div>
+<div class="input-field col s12">
+<input id="consumo" type="text" class="validate">
+<label for="consumo">consumo</label>
+</div>                
+<div class="input-field col s12">
+<input id="precio" type="text" class="validate">
+<label for="precio">precio</label>
+</div>
+</div>
+
+
+<div class="col s4" id="resultado">
+<h5>resultado</h5>
+<span></span>
+</div>
+
+<div class="col s4" >
+<button class="btn waves-effect waves-light" id="button" onclick="recibeDatos()">Calcular</button>
+
+
+
+</div>
+</div>
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script>
+function calcula(km,consumo,precio){
+  var litros=km*consumo/100;
+  var gastos=precio*litros;
+  console.log("el consumo es de: "+consumo);
+  var pinta = "<p>El gasto para recorrer "+km+" Km. es de "+gastos+" Euros con un consumo medio de "+consumo+" litros a los 100Km y con el precio del combustible a "+precio+" euros el litro</p>";
+  $("#resultado span").html(pinta);
+}
+function recibeDatos(){
+  var km=$("#km").val();
+  var consumo=$("#consumo").val();
+  var precio=$("#precio").val();
+  calcula(km,consumo,precio);
+}
+
+</script>
+
+</body>
+</html>
